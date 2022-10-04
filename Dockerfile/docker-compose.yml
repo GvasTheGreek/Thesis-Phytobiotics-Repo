@@ -1,0 +1,68 @@
+version: "2"
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.2.0
+        container_name: elastic01
+        restart: "no"
+        environment:
+            - node.name=node1 # Added on 8/8
+            - xpack.security.enabled=true
+            - discovery.type=single-node
+            - bootstrap.memory_lock=true  # Added on 8/8
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # Added on 8/8
+            - xpack.ml.enabled=true
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        cap_add:
+            - IPC_LOCK
+        volumes:
+            - elasticsearch-data:/usr/share/elasticsearch/data
+            - shared:/usr/share/elasticsearch/shared
+        ports:
+            - 9200:9200
+        networks:
+            - es-network
+         
+
+
+    kibana:
+        container_name: kibana01
+        image: docker.elastic.co/kibana/kibana:8.2.0
+        restart: "no"
+        environment:
+            - ELASTICSEARCH_HOSTS=https://elasticsearch:9200 #edited
+        ports:
+            - 5601:5601
+        depends_on:
+            - elasticsearch
+        volumes:
+            - shared:/usr/share/elasticsearch/shared 
+        networks:
+            - es-network
+    
+    
+    django:
+        container_name: django01
+        image: iltrimmer/project-phy:django1
+        restart: "no"
+        ports:
+            - 8000:8000
+        depends_on:
+            - elasticsearch
+        networks:
+            - es-network
+
+volumes:
+    elasticsearch-data:
+        driver: local
+    shared:
+        driver: local
+
+networks:
+    es-network:
+        driver: bridge

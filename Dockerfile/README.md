@@ -1,0 +1,1 @@
+The docker-compose.yml file can be used to build the containers for the application.
