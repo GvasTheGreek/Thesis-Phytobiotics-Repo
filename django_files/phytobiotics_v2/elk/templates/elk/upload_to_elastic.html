@@ -1,0 +1,106 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--  
+            Document Title
+            =============================================
+        -->
+        <title>Phytobiotics | Multipurpose Platform</title>
+        <!--  
+            Favicons
+            =============================================
+        -->
+        <link rel="manifest" href="{% static 'myapp/manifest.json' %}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="#">
+        <meta name="theme-color" content="#ffffff">
+        <!--  
+            Stylesheets
+            =============================================
+    
+        -->
+        <!-- Default stylesheets-->
+        <link href="{% static 'myapp/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Template specific stylesheets-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="{% static 'myapp/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/et-line-font.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/flexslider.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/owl.theme.default.min.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/magnific-popup.css' %}" rel="stylesheet">
+        <link href="{% static 'myapp/simpletextrotator.css' %}" rel="stylesheet">
+        <!-- Main stylesheet and color file-->
+        <link href="{% static 'myapp/style.css' %}" rel="stylesheet">
+        <link id="color-scheme" href="{% static 'myapp/default.css' %}" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+        <main class="bg-dark-30 showcase-page-header module parallax-bg height2" data-background="{% static 'myapp/download2.jpg' %}">
+            <div class="page-loader">
+                <div class="loader">Loading...</div>
+            </div>
+            <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'home_page' %}">Phytobiotics</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="custom-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{% url 'home_page' %}">Home</a></li>
+                            <li><a href="https://localhost:9200">Elasticsearh</a></li>
+                            <li><a href="{% url 'profile-page' %}">My Profile</a></li>
+                            <li><a href="{% url 'Logout' %}">Logout</a></li>
+                            <li><a href="{% url 'about-page' %}">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <section>
+                    <div class="container">
+                        <div class="row" >
+                            <div class="container" id="inputs3">
+                                <form method ='post' enctype ="multipart/form-data">
+                                    {% csrf_token %}
+                                    <fieldset class="form-group">
+                                        <legend class="order-bottom mb-4" id="h1-alt">Upload Your Data</legend>
+                                        {{form | crispy}}
+                                    </fieldset>
+                                    <!--<input type="submit" value = "Submit">-->
+                                    <div clss="form-group">
+                                        <button class="btn btn-outline-info" type="submit" id="alt">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {% if success == "yes" %}
+                        <div class="form-group">
+                            <a href="{% url 'visualization' %}"><button class="btn btn-outline-info" type="button" id="alt">visualization</button></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="{% static 'myapp/jquery.js' %}"></script>
+        <script src="{% static 'myapp/bootstrap.min.js' %}"></script>
+        <script src="{% static 'myapp/wow.js' %}"></script>
+        <script src="{% static 'myapp/jquery.mb.YTPlayer.js' %}"></script>
+        <script src="{% static 'myapp/isotope.pkgd.js' %}"></script>
+        <script src="{% static 'myapp/imagesloaded.pkgd.js' %}"></script>
+        <script src="{% static 'myapp/jquery.flexslider.js' %}"></script>
+        <script src="{% static 'myapp/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'myapp/smoothscroll.js' %}"></script>
+        <script src="{% static 'myapp/jquery.magnific-popup.js' %}"></script>
+        <script src="{% static 'myapp/jquery.simple-text-rotator.min.js' %}"></script>
+        <script src="{% static 'myapp/plugins.js' %}"></script>
+        <script src="{% static 'myapp/main.js' %}"></script>
+   </body>
+</html>

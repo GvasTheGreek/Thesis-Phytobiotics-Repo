@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>Phytobiotics | Multipurpose Platform</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="manifest" href="{% static 'myapp/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="#">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="{% static 'myapp/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{% static 'myapp/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/et-line-font.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/simpletextrotator.css' %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'myapp/style.css' %}" rel="stylesheet">
+    <link id="color-scheme" href="{% static 'myapp/default.css' %}" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'welcome' %}">Phytobiotics</a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'welcome' %}">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="main">
+        <!--
+        <section class="module bg-dark-30" data-background="{% static 'myapp/download.jpg' %}">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt mb-0">Login-Register</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        -->
+        <section class="module" data-background="{% static 'myapp/download2.jpg' %}">
+          <div class="container">
+            <div class="row">
+            <!--<div class="content-section">-->
+              <!--<div class="col-md-8">-->
+            <div class="container3" id="inputs2">
+                <legend class="order-bottom mb-4" id="h1-alt">You have successfully logged out</legend>
+                <div class="border-top pt-3">
+                    <small class="text-muted"> 
+                        Log In Again <a class="ml-2" href="{% url 'Login' %}">Sign In</a>
+                    </small>
+                </div>
+                <div class="border-top pt-3">
+                <small class="text-muted"> 
+                    Need An Account <a class="ml-2" href="{% url 'register-page' %}">Sign Up</a>
+                </small>
+                </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        <div class="module-small bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">About Phytobiotics</h5>
+                  <p>The languages only differ in their grammar, their pronunciation and their most common words.</p>
+                  <p>Phone: +30 123 123 1234</p>Fax: +30 123 123 1234
+                  <p>Email:<a href="#">somecompany@example.com</a></p>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">Recent Comments</h5>
+                  <ul class="icon-list">
+                    <li>John Doe on <a href="#">Development</a></li>
+                    <li>John Doe on <a href="#">Development</a></li>
+                    <li>John Doe on <a href="#">Development</a></li>
+                    <li>John Doe on <a href="#">Development</a></li>
+                    <li>John Doe on <a href="#">Development</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">Blog Categories</h5>
+                  <ul class="icon-list">
+                    <li><a href="#">Development - 7</a></li>
+                    <li><a href="#">Development - 3</a></li>
+                    <li><a href="#">Development - 12</a></li>
+                    <li><a href="#">Development - 1</a></li>
+                    <li><a href="#">Development - 16</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">Popular Posts</h5>
+                  <ul class="widget-posts">
+                    <li class="clearfix">
+                      <div class="widget-posts-image"><a href="#"><img src="{% static 'myapp/download.jpg' %}" alt="Post Thumbnail"/></a></div>
+                      <div class="widget-posts-body">
+                        <div class="widget-posts-title"><a href="#">Development</a></div>
+                        <div class="widget-posts-meta">23 january</div>
+                      </div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="widget-posts-image"><a href="#"><img src="{% static 'myapp/download.jpg' %}" alt="Post Thumbnail"/></a></div>
+                      <div class="widget-posts-body">
+                        <div class="widget-posts-title"><a href="#">Development</a></div>
+                        <div class="widget-posts-meta">15 February</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="copyright font-alt">&copy; 2021&nbsp;<a href="#">PHytobiotics</a>, All Rights Reserved</p>
+              </div>
+              <div class="col-sm-6">
+                <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="{% static 'myapp/jquery.js' %}"></script>
+    <script src="{% static 'myapp/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myapp/wow.js' %}"></script>
+    <script src="{% static 'myapp/jquery.mb.YTPlayer.js' %}"></script>
+    <script src="{% static 'myapp/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'myapp/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'myapp/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'myapp/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'myapp/smoothscroll.js' %}"></script>
+    <script src="{% static 'myapp/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'myapp/jquery.simple-text-rotator.min.js' %}"></script>
+    <script src="{% static 'myapp/plugins.js' %}"></script>
+    <script src="{% static 'myapp/main.js' %}"></script>
+  </body>
+</html>

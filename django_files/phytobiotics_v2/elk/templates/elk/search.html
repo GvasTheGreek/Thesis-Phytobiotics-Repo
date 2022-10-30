@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+      Document Title
+      =============================================
+      -->
+    <title>Phytobiotics | Multipurpose HTML5 Template</title>
+    <!--  
+      Favicons
+      =============================================
+      -->
+    <link rel="manifest" href="{% static 'myapp/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="#">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+      Stylesheets
+      =============================================
+      
+      -->
+    <!-- Default stylesheets-->
+    <link href="{% static 'myapp/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{% static 'myapp/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/et-line-font.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/simpletextrotator.css' %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'myapp/style.css' %}" rel="stylesheet">
+    <link id="color-scheme" href="{% static 'myapp/default.css' %}" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
+            <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Phytobiotics</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="custom-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{% url 'home_page' %}">Home</a></li>
+                            <li><a href="{% url 'upload_file' %}">Upload</a></li>
+                            <li><a href="{% url 'Logout' %}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <section class="module" data-background="{% static 'myapp/download2.jpg' %}">
+            <div class="container">
+                <div class="row" >
+                    <div class="container1" id="inputs">
+                        <h1>Search</h1>
+                        <form>
+                            <input type="search" placeholder="Temperature" name="temperature" value="">
+                            <input type="search" placeholder="Ambient_noise" name="ambient_noise" value="">
+                            <button type="submit" >Search</button>
+                        </form>
+        
+                        {% if results %}
+                            <h3>We found {{ count }} result{{ count|pluralize }} for your search </h3>
+                        {% for mytuple in results %}
+                        <div>
+                            {{ mytuple.0 }},
+                            {{ mytuple.1 }}
+                        </div>
+                        {% endfor %}
+                        {%elif not search_term %}
+                        <h3>Insert your search here.</h3>
+                        {%elif not results %}
+                        <p>No results found.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{% static 'myapp/jquery.js' %}"></script>
+    <script src="{% static 'myapp/bootstrap.min.js' %}"></script>
+    <script src="{% static 'myapp/wow.js' %}"></script>
+    <script src="{% static 'myapp/jquery.mb.YTPlayer.js' %}"></script>
+    <script src="{% static 'myapp/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'myapp/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'myapp/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'myapp/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'myapp/smoothscroll.js' %}"></script>
+    <script src="{% static 'myapp/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'myapp/jquery.simple-text-rotator.min.js' %}"></script>
+    <script src="{% static 'myapp/plugins.js' %}"></script>
+    <script src="{% static 'myapp/main.js' %}"></script>
+</body>
+</html>

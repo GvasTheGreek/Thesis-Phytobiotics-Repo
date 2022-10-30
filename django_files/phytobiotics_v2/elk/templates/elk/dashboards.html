@@ -1,0 +1,122 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!--  
+            Document Title
+            =============================================
+        -->
+<title>
+                Phytobiotics | Multipurpose Platform
+        </title>
+<!--  
+            Favicons
+            =============================================
+        -->
+<link href="{% static 'myapp/manifest.json' %}" rel="manifest"/>
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="#" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<!--  
+            Stylesheets
+            =============================================
+    
+        -->
+<link href="{% static 'myapp/bootstrap.min.css' %}" rel="stylesheet"/>
+<!-- Template specific stylesheets-->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"/>
+<link href="{% static 'myapp/animate.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/font-awesome.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/et-line-font.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/flexslider.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/owl.carousel.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/owl.theme.default.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/magnific-popup.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/simpletextrotator.css' %}" rel="stylesheet"/>
+<!-- Main stylesheet and color file-->
+<link href="{% static 'myapp/style.css' %}" rel="stylesheet"/>
+<link href="{% static 'myapp/default.css' %}" id="color-scheme" rel="stylesheet"/>
+</head>
+<body data-offset="60" data-spy="scroll" data-target=".onpage-navigation">
+<main class="bg-dark-30 showcase-page-header module parallax-bg height3" data-background="{% static 'myapp/download2.jpg' %}">
+<div class="page-loader">
+<div class="loader">Loading...</div>
+</div>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#custom-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle
+                                                        navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'home_page' %}">Phytobiotics</a>
+</div>
+<div class="collapse navbar-collapse" id="custom-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="{% url 'home_page' %}">Home</a></li>
+<li><a href="https://localhost:5601">Login To Kibana</a></li>
+<li><a href="{% url 'profile-page' %}">My Profile</a></li>
+<li><a href="{% url 'Logout' %}">Logout</a></li>
+<li><a href="{% url 'about-page' %}">About</a></li>
+</ul>
+</div>
+<a class="my-thesis" onclick="a()" style="cursor:pointer; color:#fff">Dashboard a
+</a><a class="my-thesis" onclick="b()" style="cursor:pointer; color:#fff">Dashboard b
+</a><a class="my-thesis" onclick="c()" style="cursor:pointer; color:#fff">Dashboard c
+</a><a class="my-thesis" onclick="d()" style="cursor:pointer; color:#fff">Dashboard d
+</a><a class="my-thesis" onclick="e()" style="cursor:pointer; color:#fff">Dashboard e
+</a><a class="my-thesis" onclick="f()" style="cursor:pointer; color:#fff">Dashboard f
+</a></div>
+</nav>
+<div id="iframeDisplay"></div>
+<div id="hide-div">
+<h2>
+<!--Make a table based on JSON data.-->
+                                View The Dashboards Here
+                        </h2>
+<p id="demo">
+</p>
+<div>
+<!--{{form}}-->
+</div>
+</div>
+</main>
+<script src="{% static 'myapp/jquery.js' %}"></script>
+<script src="{% static 'myapp/bootstrap.min.js' %}"></script>
+<script src="{% static 'myapp/wow.js' %}"></script>
+<script src="{% static 'myapp/jquery.mb.YTPlayer.js' %}"></script>
+<script src="{% static 'myapp/isotope.pkgd.js' %}"></script>
+<script src="{% static 'myapp/imagesloaded.pkgd.js' %}"></script>
+<script src="{% static 'myapp/jquery.flexslider.js' %}"></script>
+<script src="{% static 'myapp/owl.carousel.min.js' %}"></script>
+<script src="{% static 'myapp/smoothscroll.js' %}"></script>
+<script src="{% static 'myapp/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'myapp/jquery.simple-text-rotator.min.js' %}"></script>
+<script src="{% static 'myapp/plugins.js' %}"></script>
+<script src="{% static 'myapp/main.js' %}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script class="thesis">function a() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/3b0b7b90-050f-11ed-a3b9-3d90b3e799c7?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script><script class="thesis">function b() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/4a809310-0138-11ed-9866-eb7a4c74433d?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script><script class="thesis">function c() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/8f19a6b0-0075-11ed-9f11-c7ba2ab83cd2?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script><script class="thesis">function d() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/e503cdc0-04ef-11ed-a3b9-3d90b3e799c7?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script><script class="thesis">function e() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/edf84fe0-e1a0-11e7-b6d5-4dc382ef7f5b?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script><script class="thesis">function f() {
+	document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"https://localhost:5601/app/dashboards#/view/f7b2f6f0-1d7a-11ed-8250-65f2327c3f75?embed=true&_g=(filters%3A!())&show-top-menu=true&show-query-input=true&show-time-filter=true\" style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding-top:70px; overflow:hidden;\"></iframe>";
+	document.getElementById("hide-div").style.display = "none"; window.location = loc; }
+</script></body>
+</html>
