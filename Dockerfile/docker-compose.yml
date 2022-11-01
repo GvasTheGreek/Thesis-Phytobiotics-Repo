@@ -1,7 +1,7 @@
 version: "2"
 services:
     elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.2.0
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.2.0  #Always check for newer versions in docker-hub
         container_name: elastic01
         restart: "no"
         environment:
@@ -32,7 +32,7 @@ services:
 
     kibana:
         container_name: kibana01
-        image: docker.elastic.co/kibana/kibana:8.2.0
+        image: docker.elastic.co/kibana/kibana:8.2.0  #Always check for newer versions in docker-hub
         restart: "no"
         environment:
             - ELASTICSEARCH_HOSTS=https://elasticsearch:9200 
@@ -48,7 +48,7 @@ services:
     
     django:
         container_name: django01
-        image: iltrimmer/project-phy:django1
+        image: iltrimmer/project-phy:django1  #Always check for newer versions in docker-hub
         restart: "no"
         ports:
             - 8000:8000
