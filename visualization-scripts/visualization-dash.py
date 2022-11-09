@@ -834,13 +834,3 @@ def f20():
 
     if __name__ == '__main__':
         app.run_server(debug=True)
-
-
-# f11()
-
-
-# to f16() na to sizitisw
-# to f12() na to sizitisw
-
-
-# Vazw to f11() --- Anevike
