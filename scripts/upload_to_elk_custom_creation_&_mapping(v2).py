@@ -45,23 +45,23 @@ payload = open("Sensor_Data_RTH1.json", 'rb')
 headers = {
     'content-type': 'application/json'
 }
-r = requests.put('https://localhost:9200/nypd?pretty', verify=False, auth=('elastic', 'elastic'))
+r = requests.put('https://localhost:9200/INDEX-NAME?pretty', verify=False, auth=('elastic', 'elastic'))
 print(r)
-r = requests.put('https://localhost:9200/nypd/_mapping', headers=headers, verify=False, auth=('elastic', 'elastic'), json=json_data)
+r = requests.put('https://localhost:9200/INDEX-NAME/_mapping', headers=headers, verify=False, auth=('elastic', 'elastic'), json=json_data)
 print(r)
-r = requests.post('https://localhost:9200/nypd2/_bulk?pretty', headers=headers, data=payload, verify=False, auth=('elastic', 'elastic'))  # 18/8
+r = requests.post('https://localhost:9200/INDEX-NAME-No2/_bulk?pretty', headers=headers, data=payload, verify=False, auth=('elastic', 'elastic'))  # 18/8
 print(r)
 
 new_index = {
     "source": {
-        "index": "nypd2",
+        "index": "INDEX-NAME_No2",
         "query": {
             "match_all": {}
         }
     },
 
     "dest": {
-        "index": "nypd"
+        "index": "INDEX-NAME"
     }
 }
 
