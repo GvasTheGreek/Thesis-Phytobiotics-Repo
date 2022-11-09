@@ -48,7 +48,7 @@ def function():
         data = json.loads(f.read())
         for row in range(len(data)):
             # put document into elastic search
-            es.index(index="summer", body=data[row], id=p)
+            es.index(index="NAME-OF-THE-INDEX", body=data[row], id=p)
             # print(obj)
             p = p + 1
 
